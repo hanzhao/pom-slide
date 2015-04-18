@@ -1,0 +1,34 @@
+{
+  "name": "slide",
+  "version": "1.0.0",
+  "authors": [
+    "Magica <i@0u0.moe>"
+  ],
+  "description": "Apr.18 MSTC Slide",
+  "main": "index.js",
+  "moduleType": [
+    "node"
+  ],
+  "keywords": [
+    "Slide",
+    "MSTC",
+    "Atom-Shell",
+    "Electron"
+  ],
+  "license": "MIT",
+  "homepage": "http://magica.moe",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "fullpage": "~2.6.4",
+    "jquery": "~2.1.3",
+    "coffee-script": "~1.9.2",
+    "bootstrap": "~3.3.4",
+    "socket.io-client": "~1.3.5"
+  }
+}

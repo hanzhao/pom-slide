@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+  <head lang="zh-CN">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Atom &amp; Electron</title>
+    <link rel="stylesheet" href="./bower_components/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="./bower_components/fullpage/jquery.fullPage.css">
+    <link rel="stylesheet" href="./assets/css/app.css">
+    <script src="./bower_components/coffee-script/extras/coffee-script.js"></script>
+    <script type="text/javascript">
+      if (typeof(require) != 'undefined') {
+        window.$ = window.jQuery = require('./bower_components/jquery/dist/jquery.min.js');
+        require('./modules/index.js');
+      }
+    </script>
+    <script src="./bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="./bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="./bower_components/fullpage/vendors/jquery.easings.min.js"></script>
+    <script src="./bower_components/fullpage/vendors/jquery.slimscroll.min.js"></script>
+    <script src="./bower_components/fullpage/jquery.fullPage.js"></script>
+    <script src="./bower_components/socket.io-client/socket.io.js"></script>
+    <script src="./assets/js/app.coffee" type="text/coffeescript"></script>
+  </head>
+  <body>
+    <ul id="menu">
+    	<li data-menuanchor="first" class="active"><a href="#first">(1)</a></li>
+    	<li data-menuanchor="second"><a href="#second">(2)</a></li>
+    	<li data-menuanchor="third"><a href="#third">(3)</a></li>
+    	<li data-menuanchor="fourth"><a href="#fourth">(4)</a></li>
+      <li data-menuanchor="fifth"><a href="#fifth">(5)</a></li>
+      <li><a id="show-webview">Dark</a></li>
+    	<li data-menuanchor="sixth"><a href="#sixth">(6)</a></li>
+      <li data-menuanchor="seventh"><a href="#seventh">(7)</a></li>
+      <li data-menuanchor="eighth"><a href="#eighth">(8)</a></li>
+    </ul>
+    <div id="fullpage">
+      <div class="section active" id="section0">
+        <div class="container">
+          <div class="col-sm-12">
+            <h1 class="center">Atom &amp; Electron</h1>
+            <h2 class="center">By Magica @ MSTC POM</h2>
+            <h3 id="current-time" class="center"></h3>
+          </div>
+        </div>
+      </div>
+      <div class="section" id="section1">
+        <div class="container">
+          <div class="col-sm-12">
+            <h2>聊聊 Atom</h2>
+            <h3>什么都别说了直接看展示好了……</h3>
+          </div>
+        </div>
+      </div>
+      <div class="section" id="section2">
+        <div class="container">
+          <div class="col-sm-12">
+            <h2>为什么要用 Web 技术写桌面应用</h2>
+          </div>
+        </div>
+      </div>
+      <div class="section" id="section3">
+        <div class="slide">
+          <div class="container">
+            <div class="col-sm-12">
+              <h2>1. 可扩展，可定制的 UI</h2>
+              <h3>UI 库 (Bootstrap，AmazeUI，Foundation，Google Paper……)</h3>
+              <h3>CSS3</h3>
+              <a class="btn btn-lg btn-success">Button</a>
+              <a class="btn btn-lg btn-warning">Button</a>
+              <a class="btn btn-lg btn-primary">Button</a>
+              <a class="btn btn-lg btn-secondary">Button</a>
+              <a class="btn btn-lg btn-default">Button</a>
+            </div>
+          </div>
+        </div>
+        <div class="slide">
+          <div class="container">
+            <div class="col-sm-12">
+              <h2>2. 成熟的 HTML5 跨平台渲染效果基本统一</h2>
+              <h3>妈妈再也不用担心我用 Qt 写的应用在多平台行为不同啦</h3>
+              <h3>* 还送 Webview 和 WebGL</h3>
+            </div>
+          </div>
+        </div>
+        <div class="slide">
+          <div class="container">
+            <div class="col-sm-12">
+              <h2>3. 活跃的 Node.js / io.js 社区</h2>
+              <h3>轮子造了一堆，坑也填的差不多了，等着懒惰的人去享受</h3>
+              <h3>Bower，Gulp，Bluebird，CoffeeScript，Request，Mocha，Mongoose，……</h3>
+              <h3>* 很久不写纯 JavaScript 了</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="section" id="section4">
+        <div class="slide">
+          <webview id="webview1" src="http://www.goodboydigital.com/client/goodboy/nebulon/" style="display: none;">
+          </webview>
+        </div>
+        <div class="slide">
+          <webview id="webview2" src="http://endurance.interstellarmovie.net/" style="display: none;">
+          </webview>
+        </div>
+        <div class="slide">
+          <webview id="webview3" src="http://www.mediosyproyectos.com/puppetic/" style="display: none;">
+          </webview>
+        </div>
+      </div>
+      <div class="section" id="section5">
+        <div class="container">
+          <h2>还有很多 HTML5 API 可以慢慢玩……</h2>
+          <span style="font-size: 300%;">比如</span><a id="notification" class="btn btn-success btn-lg">Notification</a>
+        </div>
+      </div>
+      <div class="section" id="section6">
+        <div class="container">
+          <h2>也许刚刚的展示看起来都太像是一个被封装的静态网页了</h2>
+          <div id="act-box" style="display: none;">
+            <div class="form-group">
+              <label for="response-box">收到的消息</label>
+              <textarea id="response-box" class="form-control"></textarea>
+            </div>
+            <div class="form-group">
+              <label for="message-box">发送的消息</label>
+              <textarea id="message-box" class="form-control"></textarea>
+            </div>
+            <a id="send-message" role="button" class="btn btn-lg btn-primary">发送消息</a>
+          </div>
+        </div>
+      </div>
+      <div class="section" id="section7">
+        <div class="container">
+          <h1>这就是我要的滑板鞋！</h1>
+          <center><img src="./assets/img/atom.ico"></center>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

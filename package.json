@@ -1,0 +1,23 @@
+{
+  "name": "slide",
+  "version": "1.0.0",
+  "description": "Apr.18 MSTC Slide",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Slide",
+    "MSTC",
+    "Atom-Shell",
+    "Electron"
+  ],
+  "author": "Magica",
+  "license": "MIT",
+  "dependencies": {
+    "bluebird": "^2.9.24",
+    "coffee-script": "^1.9.2",
+    "express": "^4.12.3",
+    "socket.io": "^1.3.5"
+  }
+}
