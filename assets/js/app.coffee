@@ -8,9 +8,9 @@ $ ->
     css3: true
     scrollingSpeed: 1000
   if typeof(require) isnt 'undefined'
-    document.querySelector('#webview1').shadowRoot.querySelector('object').style.height = "1016px"
-    document.querySelector('#webview2').shadowRoot.querySelector('object').style.height = "1016px"
-    document.querySelector('#webview3').shadowRoot.querySelector('object').style.height = "1016px"
+    document.querySelector('#webview1').shadowRoot.querySelector('object').style.height = "722px"
+    document.querySelector('#webview2').shadowRoot.querySelector('object').style.height = "722px"
+    document.querySelector('#webview3').shadowRoot.querySelector('object').style.height = "722px"
   setInterval ->
     time = new Date Date.now()
     $('#current-time').text time.toLocaleTimeString()
